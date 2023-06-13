@@ -1,0 +1,22 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  windows_job:
+    runs-on: windows-latest
+    steps:
+      - run: echo "Hello World from Windows Runner!!"
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event"
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - name: Cloning GitHub Repo 
+        uses: actions/checkout@v3
+      - name: Print all Environment Variables using Command
+        run: SET
+        shell: cmd
+      - name: Print Environment Variables using Power Shell
+        run: "[System.Environment]::GetEnvironmentVariables()"
+      - name: List files in present working directory
+        run: dir 
+      - name: Execute hello.bat file (no need to change folders)
+        run: Hello.bat
+        shell: cmd
