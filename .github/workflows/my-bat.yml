@@ -18,4 +18,4 @@ jobs:
       - name: List files in present working directory
         run: dir 
       - name: Execute hello.bat file (no need to change folders)
-        run: Hello.bat
+        run: .\Hello.bat
