@@ -25,14 +25,3 @@ jobs:
           body: |
             This is the release notes for ${{ github.ref }}.
             Add your release notes here.
-
-      - name: Publish Release
-        uses: actions/upload-release-assets@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./GitHub_Training/First_Repo_AMBROWN/rel.zip
-          asset_name: rel.zip
-          asset_content_type: application/zip
-
